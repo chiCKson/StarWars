@@ -4,10 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.TopAppBar
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
@@ -23,16 +20,10 @@ import com.chickson.starwars.navigation.Screen
 fun TopBar(navController: NavController){
     TopAppBar(
         title = {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ){
-                Icon(
-                    modifier = Modifier.height(50.dp),
-                    imageVector = ImageVector.vectorResource(id = R.drawable.ic_star_wars_logo),
-                    contentDescription = "star wars"
-                )
-            }
+            Text(
+                text = "Star Wars Planets",
+                style = MaterialTheme.typography.h1
+            )
         },
 
         navigationIcon = {
