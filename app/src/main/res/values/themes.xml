@@ -2,6 +2,9 @@
 <resources>
 
     <style name="Theme.StarWars" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/purple_700</item>
+        <item name="android:statusBarColor">@color/splash_bg</item>
+    </style>
+    <style name="Theme.StarWars.Splash" parent="Theme.StarWars">
+        <item name="android:windowBackground">@drawable/logo</item>
     </style>
 </resources>

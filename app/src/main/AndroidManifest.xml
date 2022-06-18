@@ -17,16 +17,16 @@
         android:theme="@style/Theme.StarWars"
         tools:targetApi="31">
         <activity
-            android:name=".activities.dashboard.DashboardActivity"
+            android:name=".activities.splash.SplashActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.StarWars">
+            android:theme="@style/Theme.StarWars.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.dashboard.DashboardActivity"/>
     </application>
 
 </manifest>
