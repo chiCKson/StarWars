@@ -1,14 +1,22 @@
 package com.chickson.starwars
 
+import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.chickson.starwars.activities.dashboard.DashboardViewModel
-import com.chickson.starwars.activities.dashboard.Greeting
 import com.chickson.starwars.navigation.Screen
+import com.chickson.starwars.views.TopBar
 import com.chickson.starwars.views.screens.PlanetsScreen
 
 @Composable
@@ -27,7 +35,7 @@ fun Navigation(viewModel: DashboardViewModel) {
                 nullable = false
             }
         )) {
-            PlanetDetailView(viewModel = viewModel, planetId = it.arguments?.getString("id")!!.toInt() )
+            PlanetDetailView(navController = navController,viewModel = viewModel, planetId = it.arguments?.getString("id")!!.toInt() )
             //viewModel.getPlanets()
         }
     }
@@ -35,7 +43,20 @@ fun Navigation(viewModel: DashboardViewModel) {
 
 
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun PlanetDetailView(viewModel: DashboardViewModel, planetId: Int) {
-    Greeting("Planet Screen")
+fun PlanetDetailView(viewModel: DashboardViewModel, planetId: Int, navController: NavHostController) {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Scaffold(
+            topBar = {
+                TopBar(navController = navController)
+            },
+            content = {
+                Text("Planet Details")
+            }
+        )
+    }
 }
