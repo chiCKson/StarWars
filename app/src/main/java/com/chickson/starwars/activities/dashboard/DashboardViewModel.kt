@@ -31,6 +31,7 @@ constructor(
     val alert = MutableLiveData<SWAlert>()
     private var currentPage = 1
     private var allPlanetsReceived = false
+    val currentPlanet = mutableStateOf(Planet())
 
     fun getPlanets() {
         viewModelScope.launch {
@@ -64,5 +65,9 @@ constructor(
                 alert.postValue(SWAlert(type = Alert.INFO,"All Planets have been loaded."))
             }
         }
+    }
+
+    fun getPlanet(id: Int){
+        currentPlanet.value = planets.value[id]
     }
 }

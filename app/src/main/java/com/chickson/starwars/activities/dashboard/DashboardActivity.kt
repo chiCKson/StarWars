@@ -12,7 +12,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.chickson.starwars.Navigation
+import com.chickson.starwars.navigation.Navigation
 import com.chickson.starwars.models.Alert
 import com.chickson.starwars.ui.theme.StarWarsTheme
 import dagger.hilt.android.AndroidEntryPoint

@@ -24,6 +24,11 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
+    body2 = TextStyle(
+        fontFamily = nunito,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.sp
+    ),
     h1 = TextStyle(
         fontFamily = starWars,
         fontWeight = FontWeight.Bold,
