@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.chickson.starwars.activities.dashboard.DashboardViewModel
@@ -35,7 +36,7 @@ fun PlanetsScreen(navController: NavController, viewModel: DashboardViewModel) {
                     state = listState,
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(horizontal = 20.dp),
+                        .padding(horizontal = 20.dp).testTag(TestTags.planetList),
                     verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
                     itemsIndexed(viewModel.planets.value) { index, planet ->

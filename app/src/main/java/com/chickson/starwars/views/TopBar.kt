@@ -18,6 +18,7 @@ fun TopBar(navController: NavController, title: String = "Star Wars Planets"){
         },
 
         navigationIcon = {
+
             if (navController.currentDestination!!.route != Screen.DashboardScreen.route){
                 IconButton(onClick = {
                     navController.popBackStack()

@@ -1,7 +1,6 @@
 package com.chickson.starwars.activities.dashboard
 
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,7 +8,8 @@ import com.chickson.starwars.models.Alert
 import com.chickson.starwars.models.Planet
 import com.chickson.starwars.models.SWAlert
 import com.chickson.starwars.network.services.SWResult
-import com.chickson.starwars.repositories.PlanetRepository
+import com.chickson.starwars.repositories.interfaces.PlanetRepository
+import com.chickson.starwars.system.PlanetsImplementor
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
